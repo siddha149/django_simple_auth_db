@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STUDENT LIST</title>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+{% if s_list %}
+	<h3>STUDENT LIST</h3>
+	<ul>
+	{% for student in s_list %}
+		<li><a href="/authdb/{{student.id}}/">{{ student.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No students available.</p>
+{% endif %}
+
+<h3>TOPPERS</h3>
+<ol>
+	{% for tp in toppers%}
+		<li>{{ tp.name }} - {{ tp.cgpa }}</li>
+	{% endfor %}
+</ol>
+
+<h3>STUDENT TABLE</h3>
+<table>
+<tr>
+<th>NAME</th>
+<th>COURSE</th>
+<th>CGPA</th>
+<th>DOB</th>
+</tr>
+{% for student in s_list %}
+<tr>
+<td>{{student.name}}</td>
+<td>{{student.course}}</td>
+<td>{{student.cgpa}}</td>
+<td>{{student.dob}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<br>
+<a href="/authdb/logout">LOGOUT</a>
+</body>
+</html>
+

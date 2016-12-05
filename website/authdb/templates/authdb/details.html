@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> {{std.name}}</title>
+</head>
+<body>
+{%if std%}
+	<h3> Student Details </h3>
+	<ul>
+		<li>Id: {{ std.id }}</li>
+		<li>Name: {{ std.name }}</li>
+		<li>Course: {{ std.course }}</li>
+		<li>CGPA: {{ std.cgpa }}</li>
+		<li>DOB: {{std.dob}} </li>
+	</ul>
+{% else %}
+     <h3>Student details do not exist.</h3>
+{% endif %}
+<br>
+<br>
+<a href="/authdb/logout">LOGOUT</a>
+</body>
+</html>
+
